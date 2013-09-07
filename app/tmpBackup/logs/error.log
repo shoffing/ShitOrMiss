@@ -173,3 +173,45 @@ Stack Trace:
 #6 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
 #7 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #8 {main}
+2013-09-07 20:24:10 Error: [MissingControllerException] Controller class Apple-touch-icon-precomposed.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon-precomposed.pngController',
+  'plugin' => NULL,
+)
+Request URL: /apple-touch-icon-precomposed.png
+Stack Trace:
+#0 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-09-07 20:28:49 Error: [MissingActionException] Action BathroomsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'BathroomsController',
+  'action' => 'css',
+)
+Request URL: /bathrooms/css/bootstrap.css
+Stack Trace:
+#0 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BathroomsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-09-07 20:28:49 Error: [MissingActionException] Action BathroomsController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'BathroomsController',
+  'action' => 'js',
+)
+Request URL: /bathrooms/js/bootstrap.min.js
+Stack Trace:
+#0 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BathroomsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-09-07 20:28:49 Error: [MissingActionException] Action BathroomsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'BathroomsController',
+  'action' => 'css',
+)
+Request URL: /bathrooms/css/styles.css
+Stack Trace:
+#0 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BathroomsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

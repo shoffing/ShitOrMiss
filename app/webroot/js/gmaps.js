@@ -14,7 +14,7 @@ function initialize() {
 			addNewBathroom(event.latLng);
 		}, 500);
 	});
-
+	
 
 	google.maps.event.addListener(map, 'mouseup', function(event) {
 		clearTimeout(mapsTimeoutId);
@@ -34,37 +34,59 @@ function initialize() {
 				content: 'We think you\'re around here.'
 			});
 
-
-
-			var info = new google.maps.InfoWindow({
-			    content: 'testing messages'
-			});
-
 			var currentMarker = new google.maps.Marker({
-			    position: pos, // this needs to change 
-			    map: map
+				position: pos,
+				map: map
 			});
 			
+			
 			var info = new google.maps.InfoWindow({
-			    content: 'testing messages'
+				content: 'testing messages'
 			});
+			
+			//Create random points in these bounds
+			var southWest = new google.maps.LatLng(39.954121 , -75.202505);
+			var northEast = new google.maps.LatLng(39.955848 , -75.198385);
 
+			var bounds = new google.maps.LatLngBounds(southWest, northEast);
+			map.fitBounds(bounds);
+			
+			// var markerList = [];
+			// markerList[0] = new google.maps.Marker({
+				// position: (39.953841 , -75.198761)
+			
+			var lngSpan = northEast.lng() - southWest.lng();
+			var latSpan = northEast.lat() - southWest.lat();
+
+			for (var i = 0; i < 5; i++) {
+				var position = new google.maps.LatLng(
+					southWest.lat() + latSpan * Math.random(),
+					southWest.lng() + lngSpan * Math.random());
+				var marker = new google.maps.Marker({
+				position: position,
+				map: map
+				});
+
+				marker.setTitle((i + 1).toString());
+				attachSecretMessage(marker, i);
+			}
+			
 			google.maps.event.addListener(currentMarker, 'click', function () {
-			    info.open(currentMarker.get('map'), currentMarker);
+				info.open(currentMarker.get('map'), currentMarker);
 				$("#btn-shit").removeAttr("disabled");
 				$("#btn-miss").removeAttr("disabled");
 			});
 
 			google.maps.event.addListener(map, 'click', function () {
-			    $("#btn-shit").attr("disabled", "disabled");
-			    $("#btn-miss").attr("disabled", "disabled");
+				$("#btn-shit").attr("disabled", "disabled");
+				$("#btn-miss").attr("disabled", "disabled");
 			});
 
 			google.maps.event.addListener(map, 'drag', function () {
-			    $("#btn-shit").attr("disabled", "disabled");
-			    $("#btn-miss").attr("disabled", "disabled");
+				$("#btn-shit").attr("disabled", "disabled");
+				$("#btn-miss").attr("disabled", "disabled");
 
-			    clearTimeout(mapsTimeoutId);
+				clearTimeout(mapsTimeoutId);
 			});
 
 			map.setCenter(pos);
@@ -114,4 +136,15 @@ function addNewBathroom(location) {
 	$("#modal-miss").css("background-color", "#F2DEDE");
 
 	$("#addBathroomModal").modal('show');
+}
+
+function attachSecretMessage(marker, num) {
+	var message = ['This', 'is', 'the', 'secret', 'message'];
+	var info2 = new google.maps.InfoWindow({
+		content: message[num]
+	});
+
+	google.maps.event.addListener(marker, 'click', function() {
+		info2.open(marker.get('map'), marker);
+	});
 }

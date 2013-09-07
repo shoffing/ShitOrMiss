@@ -1,0 +1,217 @@
+2013-09-07 19:53:00 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/var/www/cakephp/app/Controller/BathroomsController.php, line 7]
+2013-09-07 19:53:00 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /cakephp/upload
+Stack Trace:
+#0 /var/www/cakephp/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/cakeph...', 7)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/cakeph...', 7, Array)
+#2 /var/www/cakephp/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/cakeph...', 7, Array)
+#3 /var/www/cakephp/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-09-07 19:55:48 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/var/www/app/Controller/BathroomsController.php, line 7]
+2013-09-07 19:55:48 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /bathrooms
+Stack Trace:
+#0 /var/www/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/app/Co...', 7)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/app/Co...', 7, Array)
+#2 /var/www/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/app/Co...', 7, Array)
+#3 /var/www/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-09-07 19:55:57 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/var/www/app/Controller/BathroomsController.php, line 7]
+2013-09-07 19:55:57 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /upload
+Stack Trace:
+#0 /var/www/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/app/Co...', 7)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/app/Co...', 7, Array)
+#2 /var/www/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/app/Co...', 7, Array)
+#3 /var/www/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-09-07 20:04:01 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/var/www/app/Controller/BathroomsController.php, line 7]
+2013-09-07 20:04:01 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /bathrooms/upload
+Stack Trace:
+#0 /var/www/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/app/Co...', 7)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/app/Co...', 7, Array)
+#2 /var/www/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/app/Co...', 7, Array)
+#3 /var/www/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-09-07 20:04:01 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/var/www/app/Controller/BathroomsController.php, line 7]
+2013-09-07 20:04:01 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /bathrooms/css/styles.css
+Stack Trace:
+#0 /var/www/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/app/Co...', 7)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/app/Co...', 7, Array)
+#2 /var/www/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/app/Co...', 7, Array)
+#3 /var/www/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-09-07 20:04:01 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/var/www/app/Controller/BathroomsController.php, line 7]
+2013-09-07 20:04:01 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /bathrooms/css/bootstrap.css
+Stack Trace:
+#0 /var/www/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/app/Co...', 7)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/app/Co...', 7, Array)
+#2 /var/www/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/app/Co...', 7, Array)
+#3 /var/www/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-09-07 20:04:01 Error: Fatal Error (1): Call to a member function allow() on a non-object in [/var/www/app/Controller/BathroomsController.php, line 7]
+2013-09-07 20:04:01 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /bathrooms/js/bootstrap.min.js
+Stack Trace:
+#0 /var/www/lib/Cake/Error/ErrorHandler.php(205): ErrorHandler::handleFatalError(1, 'Call to a membe...', '/var/www/app/Co...', 7)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', '/var/www/app/Co...', 7, Array)
+#2 /var/www/lib/Cake/Core/App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', '/var/www/app/Co...', 7, Array)
+#3 /var/www/lib/Cake/Core/App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-09-07 20:04:36 Error: [MissingViewException] View file "/var/www/app/View/Bathrooms/upload.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/app/View/Bathrooms/upload.ctp',
+)
+Request URL: /bathrooms/upload
+Stack Trace:
+#0 /var/www/lib/Cake/View/View.php(459): View->_getViewFileName(NULL)
+#1 /var/www/lib/Cake/Controller/Controller.php(952): View->render(NULL, NULL)
+#2 /var/www/lib/Cake/Routing/Dispatcher.php(194): Controller->render()
+#3 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BathroomsController), Object(CakeRequest), Object(CakeResponse))
+#4 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-09-07 20:04:36 Error: [MissingActionException] Action BathroomsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'BathroomsController',
+  'action' => 'css',
+)
+Request URL: /bathrooms/css/bootstrap.css
+Stack Trace:
+#0 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BathroomsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-09-07 20:04:36 Error: [MissingActionException] Action BathroomsController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'BathroomsController',
+  'action' => 'js',
+)
+Request URL: /bathrooms/js/bootstrap.min.js
+Stack Trace:
+#0 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BathroomsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-09-07 20:04:36 Error: [MissingActionException] Action BathroomsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'BathroomsController',
+  'action' => 'css',
+)
+Request URL: /bathrooms/css/styles.css
+Stack Trace:
+#0 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BathroomsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-09-07 20:09:40 Error: [MissingViewException] View file "/var/www/app/View/Pages/display.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/app/View/Pages/display.ctp',
+)
+Request URL: /pages/display
+Stack Trace:
+#0 /var/www/lib/Cake/View/View.php(459): View->_getViewFileName('display')
+#1 /var/www/lib/Cake/Controller/Controller.php(952): View->render('display', NULL)
+#2 /var/www/app/Controller/PagesController.php(70): Controller->render('display')
+#3 [internal function]: PagesController->display('display')
+#4 /var/www/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-09-07 20:09:40 Error: [MissingViewException] View file "/var/www/app/View/Pages/css/bootstrap.css.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/app/View/Pages/css/bootstrap.css.ctp',
+)
+Request URL: /pages/css/bootstrap.css
+Stack Trace:
+#0 /var/www/lib/Cake/View/View.php(459): View->_getViewFileName('css/bootstrap.c...')
+#1 /var/www/lib/Cake/Controller/Controller.php(952): View->render('css/bootstrap.c...', NULL)
+#2 /var/www/app/Controller/PagesController.php(70): Controller->render('css/bootstrap.c...')
+#3 [internal function]: PagesController->display('css', 'bootstrap.css')
+#4 /var/www/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-09-07 20:09:40 Error: [MissingViewException] View file "/var/www/app/View/Pages/js/bootstrap.min.js.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/app/View/Pages/js/bootstrap.min.js.ctp',
+)
+Request URL: /pages/js/bootstrap.min.js
+Stack Trace:
+#0 /var/www/lib/Cake/View/View.php(459): View->_getViewFileName('js/bootstrap.mi...')
+#1 /var/www/lib/Cake/Controller/Controller.php(952): View->render('js/bootstrap.mi...', NULL)
+#2 /var/www/app/Controller/PagesController.php(70): Controller->render('js/bootstrap.mi...')
+#3 [internal function]: PagesController->display('js', 'bootstrap.min.j...')
+#4 /var/www/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-09-07 20:09:40 Error: [MissingViewException] View file "/var/www/app/View/Pages/css/styles.css.ctp" is missing.
+Exception Attributes: array (
+  'file' => '/var/www/app/View/Pages/css/styles.css.ctp',
+)
+Request URL: /pages/css/styles.css
+Stack Trace:
+#0 /var/www/lib/Cake/View/View.php(459): View->_getViewFileName('css/styles.css')
+#1 /var/www/lib/Cake/Controller/Controller.php(952): View->render('css/styles.css', NULL)
+#2 /var/www/app/Controller/PagesController.php(70): Controller->render('css/styles.css')
+#3 [internal function]: PagesController->display('css', 'styles.css')
+#4 /var/www/lib/Cake/Controller/Controller.php(490): ReflectionMethod->invokeArgs(Object(PagesController), Array)
+#5 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#6 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(PagesController), Object(CakeRequest), Object(CakeResponse))
+#7 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#8 {main}
+2013-09-07 20:24:10 Error: [MissingControllerException] Controller class Apple-touch-icon-precomposed.pngController could not be found.
+Exception Attributes: array (
+  'class' => 'Apple-touch-icon-precomposed.pngController',
+  'plugin' => NULL,
+)
+Request URL: /apple-touch-icon-precomposed.png
+Stack Trace:
+#0 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-09-07 20:28:49 Error: [MissingActionException] Action BathroomsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'BathroomsController',
+  'action' => 'css',
+)
+Request URL: /bathrooms/css/bootstrap.css
+Stack Trace:
+#0 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BathroomsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-09-07 20:28:49 Error: [MissingActionException] Action BathroomsController::js() could not be found.
+Exception Attributes: array (
+  'controller' => 'BathroomsController',
+  'action' => 'js',
+)
+Request URL: /bathrooms/js/bootstrap.min.js
+Stack Trace:
+#0 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BathroomsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-09-07 20:28:49 Error: [MissingActionException] Action BathroomsController::css() could not be found.
+Exception Attributes: array (
+  'controller' => 'BathroomsController',
+  'action' => 'css',
+)
+Request URL: /bathrooms/css/styles.css
+Stack Trace:
+#0 /var/www/lib/Cake/Routing/Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 /var/www/lib/Cake/Routing/Dispatcher.php(162): Dispatcher->_invoke(Object(BathroomsController), Object(CakeRequest), Object(CakeResponse))
+#2 /var/www/app/webroot/index.php(110): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}

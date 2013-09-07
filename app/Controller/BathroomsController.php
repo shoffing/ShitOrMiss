@@ -11,8 +11,8 @@ class BathroomsController extends AppController {
         {
                 if ($this->request->is('post'))
                 {
-			var_dump($this->request->data);
+			CakeLog::write('debug', $this->request->data);
                 }
-		$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
+		//$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
         }
 }
