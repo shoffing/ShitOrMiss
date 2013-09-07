@@ -39,7 +39,6 @@ function initialize() {
 				map: map
 			});
 			
-			
 			var info = new google.maps.InfoWindow({
 				content: 'testing messages'
 			});

@@ -1,3 +1,6 @@
+<!-- Instructions -->
+<div id="instr-alert" class="alert alert-info alert-dismissable">Tap and hold to add a new bathroom!</div>
+
 <!--Displays the map-->
 <div id='map_canvas' style='width: 100%;height:75%'></div>
 
@@ -25,13 +28,13 @@
 						$("#modal-shit").click(function() {
 							$("#modal-shit").css("background-color", "#468847");
 							$("#modal-miss").css("background-color", "#F2DEDE");
-							$("#modal-rating").val($("#modal-shit").val());
+							$("#modal-rating").val("shit");
 						});
 
 						$("#modal-miss").click(function() {
 							$("#modal-shit").css("background-color", "#DFF0D8");
 							$("#modal-miss").css("background-color", "#b94a48");
-							$("#modal-rating").val($("#modal-miss").val());
+							$("#modal-rating").val("miss");
 						});
 					</script>
 
