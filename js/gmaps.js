@@ -23,9 +23,6 @@ function initialize() {
 		clearTimeout(mapsTimeoutId);
 	});
 	
-	// Check if a marker was clicked
-	var markerClicked = false;
-
     
 
 	// Try HTML5 geolocation
@@ -42,6 +39,22 @@ function initialize() {
 			var currentMarker = new google.maps.Marker({
 			    position: pos,
 			    map: map
+			});
+
+			google.maps.event.addListener(currentMarker, 'click', function () {
+			    document.getElementById("btn-shit").removeAttribute("disabled");
+			    document.getElementById("btn-miss").removeAttribute("disabled");
+
+			});
+
+			google.maps.event.addListener(map, 'click', function () {
+			    document.getElementById("btn-shit").setAttribute("disabled", "disabled");
+			    document.getElementById("btn-miss").setAttribute("disabled", "disabled");
+			});
+
+			google.maps.event.addListener(map, 'drag', function () {
+			    document.getElementById("btn-shit").setAttribute("disabled", "disabled");
+			    document.getElementById("btn-miss").setAttribute("disabled", "disabled");
 			});
 
 
