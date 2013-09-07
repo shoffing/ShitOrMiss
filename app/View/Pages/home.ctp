@@ -15,7 +15,7 @@
 
 			<form method="post" action="/bathrooms/upload">
 				<div class="modal-body">
-					<input name="data[Bathroom][name]" type="text" class="form-control" placeholder="Name" maxlength="50" /> <br/>
+					<input id="modal-name"  name="data[Bathroom][name]" type="text" class="form-control" placeholder="Name" maxlength="50" /> <br/>
 
 					<div class="btn-group btn-group-justified">
 						<a href="#" id="modal-shit" type="button" class="modal-rate-btn btn btn-default-shit">SHIT</a>
@@ -42,7 +42,7 @@
 					<input id="modal-longitude" name="data[Bathroom][long]" type="text" style="display:none;" />
 				</div>
 				<div class="modal-footer" style="display: inline-block;">
-					<input name="submit" type="submit" value="Add Bathroom" class="btn btn-default" />
+					<input id="submitButton" name="submit" type="submit" value="Add Bathroom" class="btn btn-default" />
 				</div>
 			</form>
 		</div>
@@ -57,3 +57,4 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDparBeWyDGxDeoa6sAyCcLdwHjkprPraY&v=3.exp&sensor=true"></script>
 <script src="js/gmaps.js"></script>
 <script src="js/script.js"></script>
+<script src="js/ajax.js"></script>

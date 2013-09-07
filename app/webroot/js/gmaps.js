@@ -35,24 +35,24 @@ function initialize() {
 				content: 'We think you\'re around here.'
 			});
 
-			var currentMarker = new google.maps.Marker({
-				position: pos,
-				map: map
-			});
+			// var currentMarker = new google.maps.Marker({
+				// position: pos,
+				// map: map
+			// });
 			
-			var info = new google.maps.InfoWindow({
-				content: 'testing messages'
-			});
+			// var info = new google.maps.InfoWindow({
+				// content: 'testing messages'
+			// });
 			
 			
-			google.maps.event.addListener(currentMarker, 'click', function () {
-				info.open(currentMarker.get('map'), currentMarker);
-				$("#btn-shit").removeAttr("disabled");
-				$("#btn-miss").removeAttr("disabled");
-			});
+			// google.maps.event.addListener(currentMarker, 'click', function () {
+				// info.open(currentMarker.get('map'), currentMarker);
+				// $("#btn-shit").removeAttr("disabled");
+				// $("#btn-miss").removeAttr("disabled");
+			// });
 			
 			google.maps.event.addListener(marker, 'click', function () {
-				info.open(marker.get('map'), marker);
+				// info.open(marker.get('map'), marker);
 				$("#btn-shit").removeAttr("disabled");
 				$("#btn-miss").removeAttr("disabled");
 			});
@@ -61,16 +61,16 @@ function initialize() {
 			google.maps.event.addListener(map, 'click', function () {
 				$("#btn-shit").attr("disabled", "disabled");
 				$("#btn-miss").attr("disabled", "disabled");
-				info.close();
-				for(var f = 0; f > markerList.length; f++)
-					info2.close();
+				// info.close();
+				info2.close();
+				
 				
 			});
 	
 			google.maps.event.addListener(map, 'drag', function () {
 				$("#btn-shit").attr("disabled", "disabled");
 				$("#btn-miss").attr("disabled", "disabled");
-				info.close();
+				// info.close();
 				clearTimeout(mapsTimeoutId);
 			});
 

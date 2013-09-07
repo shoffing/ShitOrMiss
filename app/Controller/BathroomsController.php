@@ -7,6 +7,8 @@ class BathroomsController extends AppController {
                 $this->Auth->allow('upload'); //Allows anyone to upload files
         } */
 
+	public $components = array('RequestHandler');	
+
         public function upload()
         {
                 if ($this->request->is('post'))
@@ -18,6 +20,5 @@ class BathroomsController extends AppController {
 				$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
 			}	
                 }
-		$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
         }
 }
