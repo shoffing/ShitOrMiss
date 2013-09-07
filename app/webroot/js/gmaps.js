@@ -36,9 +36,7 @@ function initialize() {
 
 
 
-			var info = new google.maps.InfoWindow({
-			    content: 'testing messages'
-			});
+
 
 			var currentMarker = new google.maps.Marker({
 			    position: pos, // this needs to change 
@@ -50,7 +48,7 @@ function initialize() {
 			});
 
 			google.maps.event.addListener(currentMarker, 'click', function () {
-			    info.open(currentMarker.get('map'), currentMarker);
+			    new google.maps.InfoWindow.open(currentMarker.get('map'), currentMarker);
 				$("#btn-shit").removeAttr("disabled");
 				$("#btn-miss").removeAttr("disabled");
 			});
