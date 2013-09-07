@@ -14,12 +14,16 @@ function initialize() {
 			addNewBathroom(event.latLng);
 		}, 500);
 	});
+	
+
 	google.maps.event.addListener(map, 'mouseup', function(event) {
 		clearTimeout(mapsTimeoutId);
 	});
 	google.maps.event.addListener(map, 'mouseout', function(event) {
 		clearTimeout(mapsTimeoutId);
 	});
+	
+    
 
 	// Try HTML5 geolocation
 	if(navigator.geolocation) {
@@ -29,8 +33,31 @@ function initialize() {
 			var infowindow = new google.maps.InfoWindow({
 				map: map,
 				position: pos,
-				content: 'Location found using HTML5.<br>'
+				content: 'We think you\'re around here.'
 			});
+
+			var currentMarker = new google.maps.Marker({
+			    position: pos,
+			    map: map
+			});
+
+			google.maps.event.addListener(currentMarker, 'click', function () {
+			    document.getElementById("btn-shit").removeAttribute("disabled");
+			    document.getElementById("btn-miss").removeAttribute("disabled");
+
+			});
+
+			google.maps.event.addListener(map, 'click', function () {
+			    document.getElementById("btn-shit").setAttribute("disabled", "disabled");
+			    document.getElementById("btn-miss").setAttribute("disabled", "disabled");
+			});
+
+			google.maps.event.addListener(map, 'drag', function () {
+			    document.getElementById("btn-shit").setAttribute("disabled", "disabled");
+			    document.getElementById("btn-miss").setAttribute("disabled", "disabled");
+			});
+
+
 
 			map.setCenter(pos);
 		}, function() {

@@ -34,8 +34,7 @@
 	border-color: #D6E9C6;
 }
 
-
-#modal-miss{
+#modal-miss {
 	font-weight:bold;
 	font-size:20px;
 	color: #333333;
@@ -43,10 +42,14 @@
 	border-color: #EED3D7;
 }
 
-#modal-shit{
+#modal-shit {
 	font-weight:bold;
 	font-size:20px;
 	color: #333333;
 	background-color: #DFF0D8;
 	border-color: #D6E9C6;
+}
+
+html, body {
+	height:100%;
 }
