@@ -4,6 +4,10 @@
 <div id="instr-alert" class="alert alert-info alert-dismissable" style="position:absolute; top: 0; left: 0; font-size: 24px; width: 100%; text-align: center;">Tap and hold to add a new bathroom!</div>
 
 
+<div id="error-alert" class="alert alert-error alert-dismissable" style="position:absolute; top: 0; left: 0; font-size: 24px; width: 100%; text-align: center;">Error.</div>
+<div id="success-alert" class="alert alert-success alert-dismissable" style="position:absolute; top: 0; left: 0; font-size: 24px; width: 100%; text-align: center;">Success.</div>
+
+
 <!-- Add bathroom modal -->
 <div id="addBathroomModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addBathroomModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
