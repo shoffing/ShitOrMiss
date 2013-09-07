@@ -23,8 +23,6 @@ function initialize() {
 		clearTimeout(mapsTimeoutId);
 	});
 	
-    
-
 	// Try HTML5 geolocation
 	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
@@ -42,22 +40,21 @@ function initialize() {
 			});
 
 			google.maps.event.addListener(currentMarker, 'click', function () {
-			    document.getElementById("btn-shit").removeAttribute("disabled");
-			    document.getElementById("btn-miss").removeAttribute("disabled");
-
+				$("#btn-shit").removeAttr("disabled");
+				$("#btn-miss").removeAttr("disabled");
 			});
 
 			google.maps.event.addListener(map, 'click', function () {
-			    document.getElementById("btn-shit").setAttribute("disabled", "disabled");
-			    document.getElementById("btn-miss").setAttribute("disabled", "disabled");
+			    $("#btn-shit").attr("disabled", "disabled");
+			    $("#btn-miss").attr("disabled", "disabled");
 			});
 
 			google.maps.event.addListener(map, 'drag', function () {
-			    document.getElementById("btn-shit").setAttribute("disabled", "disabled");
-			    document.getElementById("btn-miss").setAttribute("disabled", "disabled");
+			    $("#btn-shit").attr("disabled", "disabled");
+			    $("#btn-miss").attr("disabled", "disabled");
+
+			    clearTimeout(mapsTimeoutId);
 			});
-
-
 
 			map.setCenter(pos);
 		}, function() {
