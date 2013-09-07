@@ -14,12 +14,19 @@ function initialize() {
 			addNewBathroom(event.latLng);
 		}, 500);
 	});
+	
+
 	google.maps.event.addListener(map, 'mouseup', function(event) {
 		clearTimeout(mapsTimeoutId);
 	});
 	google.maps.event.addListener(map, 'mouseout', function(event) {
 		clearTimeout(mapsTimeoutId);
 	});
+	
+	// Check if a marker was clicked
+	var markerClicked = false;
+
+    
 
 	// Try HTML5 geolocation
 	if(navigator.geolocation) {
@@ -29,8 +36,15 @@ function initialize() {
 			var infowindow = new google.maps.InfoWindow({
 				map: map,
 				position: pos,
-				content: 'Location found using HTML5.<br>'
+				content: 'We think you\'re around here.'
 			});
+
+			var currentMarker = new google.maps.Marker({
+			    position: pos,
+			    map: map
+			});
+
+
 
 			map.setCenter(pos);
 		}, function() {
