@@ -38,8 +38,15 @@ function initialize() {
 			    position: pos,
 			    map: map
 			});
-
+			
+			
+			var info = new google.maps.InfoWindow({
+			    content: 'testing messages'
+			});
+			
+			
 			google.maps.event.addListener(currentMarker, 'click', function () {
+			    info.open(currentMarker.get('map'), currentMarker);
 				$("#btn-shit").removeAttr("disabled");
 				$("#btn-miss").removeAttr("disabled");
 			});

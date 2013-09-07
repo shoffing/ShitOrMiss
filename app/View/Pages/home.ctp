@@ -10,7 +10,7 @@
 				<h3 id="myModalLabel">Add New Bathroom</h3>
 			</div>
 
-			<form method="post" action="/uploads">
+			<form method="post" action="/bathrooms/upload">
 				<div class="modal-body">
 					<input name="name" type="text" class="form-control" placeholder="Name" /> <br/>
 
@@ -51,6 +51,6 @@
 	<a href="#" id="btn-miss" class="btn btn-default-miss" disabled>MISS <span class="glyphicon glyphicon-remove-sign"></span></a>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDparBeWyDGxDeoa6sAyCcLdwHjkprPraY&v=3.exp&sensor=true"></script>
 <script src="js/gmaps.js"></script>
 <script src="js/script.js"></script>
