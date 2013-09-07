@@ -12,7 +12,12 @@ class BathroomsController extends AppController {
                 if ($this->request->is('post'))
                 {
 			CakeLog::write('debug', $this->request->data);
+			
+			if ($this->Bathroom->save($this->request->data))
+			{
+				$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
+			}	
                 }
-		//$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
+		$this->redirect(array('controller' => 'pages', 'action' => 'display', 'home'));
         }
 }

@@ -15,31 +15,31 @@
 
 			<form method="post" action="/bathrooms/upload">
 				<div class="modal-body">
-					<input name="name" type="text" class="form-control" placeholder="Name" /> <br/>
+					<input name="data[Bathroom][name]" type="text" class="form-control" placeholder="Name" /> <br/>
 
 					<div class="btn-group btn-group-justified">
 						<a href="#" id="modal-shit" type="button" class="modal-rate-btn btn btn-default-shit">SHIT</a>
 						<a href="#" id="modal-miss" type="button" class="modal-rate-btn btn btn-default-miss">MISS</a>
 					</div>
 
-					<input id="modal-rating" name="rating" type="text" style="display:none;" />
+					<input id="modal-rating" name="data[Bathroom][shit_or_miss]" type="text" style="display:none;" />
 
 					<script>
 						$("#modal-shit").click(function() {
 							$("#modal-shit").css("background-color", "#468847");
 							$("#modal-miss").css("background-color", "#F2DEDE");
-							$("#modal-rating").val("shit");
+							$("#modal-rating").val("0");
 						});
 
 						$("#modal-miss").click(function() {
 							$("#modal-shit").css("background-color", "#DFF0D8");
 							$("#modal-miss").css("background-color", "#b94a48");
-							$("#modal-rating").val("miss");
+							$("#modal-rating").val("1");
 						});
 					</script>
 
-					<input id="modal-latitude" name="latitude" type="text" style="display:none;" />
-					<input id="modal-longitude" name="longitude" type="text" style="display:none;" />
+					<input id="modal-latitude" name="data[Bathroom][lat]" type="text" style="display:none;" />
+					<input id="modal-longitude" name="data[Bathroom][long]" type="text" style="display:none;" />
 				</div>
 				<div class="modal-footer" style="display: inline-block;">
 					<input name="submit" type="submit" value="Add Bathroom" class="btn btn-default" />
