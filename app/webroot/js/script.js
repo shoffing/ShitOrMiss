@@ -1,6 +1,6 @@
 $(function() {
 	setTimeout(function() {
-		$("#instr-alert").hide();
+		$("#instr-alert").show();
 		$("#instr-alert").fadeIn(500, function() {
 			$("#instr-alert").alert();
 		});
