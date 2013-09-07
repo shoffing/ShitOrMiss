@@ -1,3 +1,6 @@
+<!-- Instructions -->
+<div id="instr-alert" class="alert alert-info alert-dismissable">Tap and hold to add a new bathroom!</div>
+
 <!--Displays the map-->
 <div id='map_canvas' style='width: 100%;height:75%'></div>
 
@@ -45,8 +48,6 @@
 		</div>
 	</div>
 </div>
-
-<div id="instr-alert" class="alert alert-info alert-dismissable">Tap and hold to add a new bathroom!</div>
 
 <div class="btn-group btn-group-justified" style="height:25%;">
 	<a href="#" id="btn-shit" class="btn btn-default-shit" disabled>SHIT <span class="glyphicon glyphicon-ok-sign"></span></a> 
