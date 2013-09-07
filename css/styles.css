@@ -1,0 +1,36 @@
+.btn-default-miss{
+	font-weight:bold;
+	font-size:20px;
+	color: #333333;
+	background-color: #F2DEDE;
+	border-color: #EED3D7;
+}
+
+.btn-default-miss:hover,
+.btn-default-miss:focus,
+.btn-default-miss:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+	color: #333333;
+	background-color: #b94a48;
+	border-color: #EED3D7;
+}
+
+.btn-default-shit{
+	font-weight:bold;
+	font-size:20px;
+
+	color: #333333;
+	background-color: #DFF0D8;
+	border-color: #D6E9C6;
+}
+
+.btn-default-shit:hover,
+.btn-default-shit:focus,
+.btn-default-shit:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+	color: #333333;
+	background-color: #468847;
+	border-color: #D6E9C6;
+}
