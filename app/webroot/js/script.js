@@ -5,7 +5,7 @@ $(function() {
 		$("#instr-alert").fadeOut(500, function() {
 			$("#instr-alert").alert('close');
 		});
-	}, 5000);
+	}, 3000);
 });
 
 // Mouse position 

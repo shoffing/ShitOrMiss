@@ -15,7 +15,7 @@
 
 			<form method="post" action="/bathrooms/upload">
 				<div class="modal-body">
-					<input name="data[Bathroom][name]" type="text" class="form-control" placeholder="Name" /> <br/>
+					<input name="data[Bathroom][name]" type="text" class="form-control" placeholder="Name" maxlength="50" /> <br/>
 
 					<div class="btn-group btn-group-justified">
 						<a href="#" id="modal-shit" type="button" class="modal-rate-btn btn btn-default-shit">SHIT</a>
