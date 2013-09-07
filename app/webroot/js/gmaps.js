@@ -14,7 +14,7 @@ function initialize() {
 			addNewBathroom(event.latLng);
 		}, 500);
 	});
-	
+
 
 	google.maps.event.addListener(map, 'mouseup', function(event) {
 		clearTimeout(mapsTimeoutId);
@@ -34,12 +34,21 @@ function initialize() {
 				content: 'We think you\'re around here.'
 			});
 
+
+
+			var info = new google.maps.InfoWindow({
+			    content: 'testing messages'
+			});
+
 			var currentMarker = new google.maps.Marker({
-			    position: pos,
+			    position: pos, // this needs to change 
 			    map: map
 			});
 
+
+            // Check the array of markers here to pop up messages
 			google.maps.event.addListener(currentMarker, 'click', function () {
+			    info.open(currentMarker.get('map'), currentMarker);
 				$("#btn-shit").removeAttr("disabled");
 				$("#btn-miss").removeAttr("disabled");
 			});
