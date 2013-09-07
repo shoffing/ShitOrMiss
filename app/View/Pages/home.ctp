@@ -1,5 +1,5 @@
 <!-- Instructions -->
-<div id="instr-alert" class="alert alert-info alert-dismissable">Tap and hold to add a new bathroom!</div>
+<div id="instr-alert" class="alert alert-info alert-dismissable" style="position:absolute; top:0; left:0; font-size: 24px; width: 100%; text-align: center; display: none;">Tap and hold to add a new bathroom!</div>
 
 <!--Displays the map-->
 <div id='map_canvas' style='width: 100%;height:75%'></div>
