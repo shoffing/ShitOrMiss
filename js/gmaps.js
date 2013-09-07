@@ -7,6 +7,20 @@ function initialize() {
 	};
 	map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
 
+	// Click and hold on map
+	var mapsTimeoutId = 0;
+	google.maps.event.addListener(map, 'mousedown', function(event) {
+		mapsTimeoutId = setTimeout(function() {
+			addNewBathroom(event.latLng);
+		}, 500);
+	});
+	google.maps.event.addListener(map, 'mouseup', function(event) {
+		clearTimeout(mapsTimeoutId);
+	});
+	google.maps.event.addListener(map, 'mouseout', function(event) {
+		clearTimeout(mapsTimeoutId);
+	});
+
 	// Try HTML5 geolocation
 	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
@@ -46,3 +60,10 @@ function handleNoGeolocation(errorFlag) {
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
+
+function addNewBathroom(location) {
+	var marker = new google.maps.Marker({
+		position: location,
+		map: map
+	});
+}
