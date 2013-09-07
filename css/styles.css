@@ -34,23 +34,3 @@
 	background-color: #468847;
 	border-color: #D6E9C6;
 }
-
-.page
-{
-	position: fixed;
-	height: 100%;
-	top: 0;
-	
-}
-
-html
-{
-	height:100%;
-}
-
-body
-{
-	height:100%;
-	margin:0;
-	padding:0;
-}

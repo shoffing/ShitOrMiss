@@ -66,4 +66,6 @@ function addNewBathroom(location) {
 		position: location,
 		map: map
 	});
+
+	map.panTo(location);
 }
