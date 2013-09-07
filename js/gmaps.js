@@ -68,4 +68,15 @@ function addNewBathroom(location) {
 	});
 
 	map.panTo(location);
+
+	// store lat/long in form for sending to php
+	
+	$("#modal-latitude").val(location.lat());
+	$("#modal-longitude").val(location.lng());
+
+	// callbacks are for losers
+	$("#modal-shit").css("background-color", "#DFF0D8");
+	$("#modal-miss").css("background-color", "#F2DEDE");
+
+	$("#addBathroomModal").modal('show');
 }
