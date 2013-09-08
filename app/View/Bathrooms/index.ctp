@@ -1,9 +1,3 @@
-<script>
-//Used to determine whether a success/failure needs to be displayed.
-var showSuccessOrFailure = false;
-
-</script>
-
 <!--Displays the map-->
 <div id='map_canvas' style='width: 100%;height:75%'></div>
 
