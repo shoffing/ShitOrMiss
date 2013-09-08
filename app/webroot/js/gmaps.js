@@ -2,6 +2,7 @@ var map;
 var markerList = [];
 
 function initialize() {
+
 	var mapOptions = {
 		zoom: 15,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -32,7 +33,7 @@ function initialize() {
 			var infowindow = new google.maps.InfoWindow({
 				map: map,
 				position: pos,
-				content: 'We think you\'re around here.'
+				// content: 'We think you\'re around here.'
 			});
 
 			// var currentMarker = new google.maps.Marker({
@@ -62,9 +63,6 @@ function initialize() {
 				$("#btn-shit").attr("disabled", "disabled");
 				$("#btn-miss").attr("disabled", "disabled");
 				// info.close();
-				info2.close();
-				
-				
 			});
 	
 			google.maps.event.addListener(map, 'drag', function () {
@@ -83,6 +81,13 @@ function initialize() {
 		handleNoGeolocation(false);
 	}
 	
+	
+				google.maps.event.addListener(map, 'click', function () {
+				$("#btn-shit").attr("disabled", "disabled");
+				$("#btn-miss").attr("disabled", "disabled");
+				// info.close();
+				
+			});
 				//Create random points in these bounds
 			var southWest = new google.maps.LatLng(39.951431 , -75.192313);
 			var northEast = new google.maps.LatLng(39.952599 , -75.190027);
@@ -110,6 +115,11 @@ function initialize() {
 				marker.setTitle((i + 1).toString());
 				attachPopup(marker, i);
 			}
+
+
+			//for (var i = 0; i < bathrooms.length; i++)
+			//{
+				console.log(bathrooms[0].Bathroom.lat);
 }
 
 function handleNoGeolocation(errorFlag) {
@@ -151,9 +161,17 @@ function addNewBathroom(location) {
 }
 
 function attachPopup(marker, num) {
-	var message = ['This', 'is', 'the', 'secret', 'message'];
+	var names = ['Starbucks', 'McDonalds', 'That Place Down the Hall', 'The Bush', 'Some Guys Yard'];
+	var numberShit = [34, 1, 7, 2, 9000];
+	var numberMiss = [20, 0, 9, 1, 4000];
+	
+	
 	var info2 = new google.maps.InfoWindow({
-		content: message[num]
+		content:
+			"Name: <b>" + names[num] + "</b><br>" + 
+			"Number Shit: <font color=\"#468847\"><b>" + numberShit[num] + "</b></font><br>" +
+			"Number Miss: <font color=\"b94a48\"><b>" + numberMiss[num] + "</b></font><br>" +
+			"Difference: <b>" + (numberShit[num] - numberMiss[num]) + "</b><br>"
 	});
 
 	google.maps.event.addListener(marker, 'click', function() {

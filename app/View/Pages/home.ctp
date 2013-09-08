@@ -7,6 +7,10 @@
 <div id="error-alert" class="alert alert-error alert-dismissable" style="position:absolute; top: 0; left: 0; font-size: 24px; width: 100%; text-align: center;">Error.</div>
 <div id="success-alert" class="alert alert-success alert-dismissable" style="position:absolute; top: 0; left: 0; font-size: 24px; width: 100%; text-align: center;">Success.</div>
 
+<script>
+	$("#error-alert").alert('close');
+	$("#success-alert").alert('close');
+</script>	
 
 <!-- Add bathroom modal -->
 <div id="addBathroomModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addBathroomModalLabel" aria-hidden="true">
@@ -59,6 +63,10 @@
 </div>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDparBeWyDGxDeoa6sAyCcLdwHjkprPraY&v=3.exp&sensor=true"></script>
+
+<script>
+var bathrooms = <?php echo json_encode($bathrooms); ?>;
+</script>
+
 <script src="js/gmaps.js"></script>
 <script src="js/script.js"></script>
-<script src="js/ajax.js"></script>

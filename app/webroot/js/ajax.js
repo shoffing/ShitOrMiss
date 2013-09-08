@@ -9,38 +9,29 @@ $(function() {
 			return false;
 		}
 		
-	/*	var email = $("input#email").val();
-		if (email == "") {
-			$("label#email_error").show();
-			$("input#email").focus();
-			return false;
-		}
+		var shitOrMiss = $("#modal-rating").val();
+		var latitude = $("#modal-latitude").val();
+		var longitude = $("#modal-longitude").val();
 		
-		var phone = $("input#phone").val();
-		if (phone == "") {
-			$("label#phone_error").show();
-			$("input#phone").focus();
-			return false;
-		}
-	*/
-		
-		  var dataString = 'name='+ name + '&email=' + email + '&phone=' + phone;
-
+		var dataString = "name=" + name + "&shit_or_miss" + shitOrMiss + "&lat" + latitude + "&long" + longitude;
+ 	
+		console.log(dataString);
 		$.ajax({
 			type: "POST",
-			url: "bin/process.php",
+			url: "bathrooms/upload",
 			data: dataString,
 			success: function() {
-				$('#contact_form').html("<div id='message'></div>");
-				$('#message').html("<h2>Contact Form Submitted!</h2>")
-					.append("<p>We will be in touch soon.</p>")
-					.hide()
-					.fadeIn(1500, function() {
-				$('#message').append("<img id='checkmark' src='images/check.png' />");
+				$('#success-alert').alert();
+				setTimeout(function() {
+					$("#success-alert").fadeOut(500, function() {
+						$("#success-alert").alert('close');
 					});
+				}, 3000);
 			}
+
 		});
 
+		$('#addBathroomModal').modal('hide');
 		return false;
 	});
 });
