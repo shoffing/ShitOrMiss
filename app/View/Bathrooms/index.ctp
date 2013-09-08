@@ -1,10 +1,20 @@
+<script>
+//Used to determine whether a success/failure needs to be displayed.
+var showSuccessOrFailure = false;
+
+</script>
+
 <!--Displays the map-->
 <div id='map_canvas' style='width: 100%;height:75%'></div>
 
 <div id="instr-alert" class="alert alert-info alert-dismissable" style="position:absolute; top: 0; left: 0; font-size: 20px; width: 100%; text-align: center;">Tap and hold to add a new bathroom!</div>
 
-<?php echo $this->Session->flash('flash'); ?>	<!-- Placeholder for error messages -->
 
+
+
+
+
+<?php echo $this->Session->flash('flash'); ?>	<!-- Placeholder for error messages -->
 <!-- Add bathroom modal -->
 <div id="addBathroomModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addBathroomModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
@@ -59,6 +69,8 @@
 <form id="voteform" method="post" action="/updateCount">
 	<input id="voteform-id" name="data[Bathroom][bathroom_id]" type="text" style="display:none"/>
 	<input id="voteform-som" name="data[Bathroom][shit_or_miss]" type="text" style="display:none"/>
+	<input id="saveLat" name="data[Bathroom][lat]" type="text" style="display:none"/>
+	<input id="saveLon" name="data[Bathroom][long]" type="text" style="display:none"/>
 </form>
 
 <script>
@@ -74,6 +86,10 @@
 		// PHP SHIT GOES HERE (SHIT + 1)
 		$("#voteform-id").val(shownInfoBubble.linkedId); // linked id
 		$("#voteform-som").val("0"); // set to shit
+		
+		$("#saveLat").val(shownInfoMarker.getPosition().lat());
+		$("#saveLon").val(shownInfoMarker.getPosition().lng());
+		
 		$("#voteform").submit();
 	});
 	
@@ -89,6 +105,10 @@
 		// PHP SHIT GOES HERE (MISS + 1)
 		$("#voteform-id").val(shownInfoBubble.linkedId); // linked id
 		$("#voteform-som").val("1"); // set to miss
+		
+		$("#saveLat").val(shownInfoMarker.getPosition().lat());
+		$("#saveLon").val(shownInfoMarker.getPosition().lng());
+		
 		$("#voteform").submit();
 	});
 </script>

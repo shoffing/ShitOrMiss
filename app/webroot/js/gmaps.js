@@ -39,13 +39,21 @@ function initialize() {
 	// Try HTML5 geolocation
 	if(navigator.geolocation) {
 		navigator.geolocation.getCurrentPosition(function(position) {
+			
 			var pos = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-
+			if($("#lastLatLong").html() !== undefined && $("#lastLatLong").html().length > 0) {
+				pos = new google.maps.LatLng(
+					$("#lastLatLong").html().split("|")[0],
+					$("#lastLatLong").html().split("|")[1]
+				);
+			}
+			
 			var infowindow = new google.maps.InfoWindow({
 				map: map,
 				position: pos,
-				// content: 'We think you\'re around here.'
+				//content: "You are here."
 			});
+			
 
 			// var currentMarker = new google.maps.Marker({
 				// position: pos,
@@ -71,6 +79,8 @@ function initialize() {
 					$("#btn-shit").removeAttr("disabled");
 					$("#btn-miss").removeAttr("disabled");
 				}
+				
+				shownInfoMarker = marker;
 			});
 			
 
@@ -92,7 +102,7 @@ function initialize() {
 				// info.close();
 				clearTimeout(mapsTimeoutId);
 			});
-
+			
 			map.setCenter(pos);
 		}, function() {
 			handleNoGeolocation(true);
@@ -219,9 +229,8 @@ function attachPopup(name, shits, miss, marker, num) {
 		$("#btn-miss").removeAttr("disabled");
 		
 		shownInfoBubble = info2;
+		shownInfoMarker = marker;
 	});
-	
-
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);

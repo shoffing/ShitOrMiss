@@ -19,6 +19,8 @@ class BathroomsController extends AppController {
         	if ($this->request->is('post'))
                 {
 			$countType = $this->request->data['Bathroom']['shit_or_miss'];
+			$lat = $this->request->data['Bathroom']['lat'];
+			$long = $this->request->data['Bathroom']['long'];
 
 			//Increment Shit Count
 			if ($countType == 0)
@@ -27,11 +29,10 @@ class BathroomsController extends AppController {
 				$this->request->data['Bathroom']['num_misses'] = 1;
 
 			if ($this->Bathroom->save($this->request->data))
-				$this->Session->setFlash("", "bathroomSaveSuccess");
+				$this->Session->setFlash($lat . "|" . $long, "bathroomSaveSuccess");
 			else
-				$this->Session->setFlash("", "bathroomSaveFailure");
+				$this->Session->setFlash($lat . "|" . $long, "bathroomSaveFailure");
                 }
-		
 		$this->redirect(array('controller' => 'bathrooms', 'action' => 'index'));
         }
 
@@ -44,7 +45,9 @@ class BathroomsController extends AppController {
 			//include 'chromephp/ChromePhp.php';
 			$id = $this->request->data['Bathroom']['bathroom_id'];
 			$countType = $this->request->data['Bathroom']['shit_or_miss'];
-			
+			$lat = $this->request->data['Bathroom']['lat'];
+			$long = $this->request->data['Bathroom']['long'];
+	
 			$bathroom = $this->Bathroom->find('first', array('conditions' => array('Bathroom.bathroom_id' => $id)));	
 				
 			//Increment Shit Count
@@ -59,6 +62,7 @@ class BathroomsController extends AppController {
 				$this->Bathroom->query("UPDATE bathrooms SET num_misses = " . $newCount . " WHERE bathroom_id = " . $id);
 			}	
 		}
+		$this->Session->setFlash($lat . "|" . $long, "bathroomSaveSuccess");
 		$this->redirect(array('controller' => 'bathrooms', 'action' => 'index'));
 	}
 }
