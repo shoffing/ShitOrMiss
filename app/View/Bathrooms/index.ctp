@@ -1,15 +1,9 @@
-<script>
-//Used to determine whether a success/failure needs to be displayed.
-var showSuccessOrFailure = false;
-
-</script>
-
 <!--Displays the map-->
 <div id='map_canvas' style='width: 100%;height:75%'></div>
 
-<div id="instr-alert" class="alert alert-info alert-dismissable" style="position:absolute; top: 0; left: 0; font-size: 24px; width: 100%; text-align: center;">Tap and hold to add a new bathroom!</div>
+<div id="instr-alert" class="alert alert-info alert-dismissable" style="position:absolute; top: 0; left: 0; font-size: 20px; width: 100%; text-align: center;">Tap and hold to add a new bathroom!</div>
 
-<?php echo $this->Session->flash('flash', array('element' => 'errorMessage')); ?>	<!-- Placeholder for error messages -->
+<?php echo $this->Session->flash('flash'); ?>	<!-- Placeholder for error messages -->
 
 <!-- Add bathroom modal -->
 <div id="addBathroomModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addBathroomModalLabel" aria-hidden="true">
@@ -63,8 +57,8 @@ var showSuccessOrFailure = false;
 
 
 <form id="voteform" method="post" action="/updateCount">
-	<input id="voteform-id" name="data[Bathroom][bathroom_id]" type="text" />
-	<input id="voteform-som" name="data[Bathroom][shit_or_miss]" type="text" />
+	<input id="voteform-id" name="data[Bathroom][bathroom_id]" type="text" style="display:none"/>
+	<input id="voteform-som" name="data[Bathroom][shit_or_miss]" type="text" style="display:none"/>
 </form>
 
 <script>
