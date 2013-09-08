@@ -1,9 +1,15 @@
+<script>
+//Used to determine whether a success/failure needs to be displayed.
+var showSuccessOrFailure = false;
+
+</script>
+
 <!--Displays the map-->
 <div id='map_canvas' style='width: 100%;height:75%'></div>
 
 <div id="instr-alert" class="alert alert-info alert-dismissable" style="position:absolute; top: 0; left: 0; font-size: 24px; width: 100%; text-align: center;">Tap and hold to add a new bathroom!</div>
 
-<?php echo $this->Session->flash('flash'); ?>	<!-- Placeholder for error messages -->
+<?php echo $this->Session->flash('flash', array('element' => 'errorMessage')); ?>	<!-- Placeholder for error messages -->
 
 <!-- Add bathroom modal -->
 <div id="addBathroomModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="addBathroomModalLabel" aria-hidden="true">
@@ -54,6 +60,44 @@
 	<a href="#" id="btn-shit" class="btn btn-default-shit" disabled>SHIT <span class="glyphicon glyphicon-ok-sign"></span></a> 
 	<a href="#" id="btn-miss" class="btn btn-default-miss" disabled>MISS <span class="glyphicon glyphicon-remove-sign"></span></a>
 </div>
+
+
+<form id="voteform" method="post" action="/updateCount">
+	<input id="voteform-id" name="data[Bathroom][bathroom_id]" type="text" />
+	<input id="voteform-som" name="data[Bathroom][shit_or_miss]" type="text" />
+</form>
+
+<script>
+	$("#btn-shit").click(function() {
+		// shit button clicked
+		
+		// disable buttons
+		$("#btn-shit").attr("disabled", "disabled");
+		$("#btn-miss").attr("disabled", "disabled");
+		
+		shownInfoBubble.close();
+		
+		// PHP SHIT GOES HERE (SHIT + 1)
+		$("#voteform-id").val(shownInfoBubble.linkedId); // linked id
+		$("#voteform-som").val("0"); // set to shit
+		$("#voteform").submit();
+	});
+	
+	$("#btn-miss").click(function() {
+		// miss button clicked
+		
+		// disable buttons
+		$("#btn-shit").attr("disabled", "disabled");
+		$("#btn-miss").attr("disabled", "disabled");
+		
+		shownInfoBubble.close();
+		
+		// PHP SHIT GOES HERE (MISS + 1)
+		$("#voteform-id").val(shownInfoBubble.linkedId); // linked id
+		$("#voteform-som").val("1"); // set to miss
+		$("#voteform").submit();
+	});
+</script>
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDparBeWyDGxDeoa6sAyCcLdwHjkprPraY&v=3.exp&sensor=true"></script>
 

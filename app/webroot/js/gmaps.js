@@ -1,12 +1,16 @@
 var map;
 var markerList = [];
+var ids = [];
 var names = [];
 var lat = [];
 var lon = [];
 var numShit = [];
 var numMiss = [];
 
-var shownInfoBubbles = [];
+var shownInfoBubble;
+var shownInfoMarker;
+
+var disabledMarkers = [];
 
 function initialize() {
 
@@ -59,10 +63,14 @@ function initialize() {
 				// $("#btn-miss").removeAttr("disabled");
 			// });
 			
+			// marker listener
 			google.maps.event.addListener(marker, 'click', function () {
-				// info.open(marker.get('map'), marker);
-				$("#btn-shit").removeAttr("disabled");
-				$("#btn-miss").removeAttr("disabled");
+				if( !$.inArray(marker, disabledMarkers) )
+				{
+					// info.open(marker.get('map'), marker);
+					$("#btn-shit").removeAttr("disabled");
+					$("#btn-miss").removeAttr("disabled");
+				}
 			});
 			
 
@@ -70,10 +78,11 @@ function initialize() {
 				$("#btn-shit").attr("disabled", "disabled");
 				$("#btn-miss").attr("disabled", "disabled");
 				
-				while(shownInfoBubbles.length > 0)
-				{
-					shownInfoBubbles.pop().close();
+				if(shownInfoBubble !== undefined) {
+					shownInfoBubble.close();
+					shownInfoBubble = undefined;
 				}
+				
 				// info.close();
 			});
 	
@@ -115,6 +124,7 @@ function initialize() {
 			for (var i = 0; i < bathrooms.length; i++)
 			{
 				//populate the arrays of db data.
+				ids.push(bathrooms[i].Bathroom.bathroom_id);
 				names.push(bathrooms[i].Bathroom.name);
 				lat.push(bathrooms[i].Bathroom.lat);
 				lon.push(bathrooms[i].Bathroom.long);
@@ -195,18 +205,20 @@ function attachPopup(name, shits, miss, marker, num) {
 			"Number Miss: <font color=\"b94a48\"><b>" + miss + "</b></font><br>" +
 			"Difference: <b>" + (shits - miss) + "</b><br>"
 	});
-
+	
+	info2.linkedId = ids[num];
+	
 	google.maps.event.addListener(marker, 'click', function() {
-		while(shownInfoBubbles.length > 0)
-		{
-			shownInfoBubbles.pop().close();
+		if(shownInfoBubble !== undefined) {
+			shownInfoBubble.close();
+			shownInfoBubble = undefined;
 		}
 		
 		info2.open(marker.get('map'), marker);
 		$("#btn-shit").removeAttr("disabled");
 		$("#btn-miss").removeAttr("disabled");
 		
-		shownInfoBubbles.push(info2);
+		shownInfoBubble = info2;
 	});
 	
 
