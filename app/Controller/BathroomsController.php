@@ -18,7 +18,13 @@ class BathroomsController extends AppController {
 
         	if ($this->request->is('post'))
                 {
-			CakeLog::write('debug', $this->request->data);
+			$countType = $this->request->data['Bathroom']['shit_or_miss'];
+
+			//Increment Shit Count
+			if ($countType == 0)
+				$this->request->data['Bathroom']['num_shits'] = 1;
+			else if ($countType == 1) //Increment Miss Count
+				$this->request->data['Bathroom']['num_misses'] = 1;
 
 			if ($this->Bathroom->save($this->request->data))
 				$this->Session->setFlash("", "bathroomSaveSuccess");
