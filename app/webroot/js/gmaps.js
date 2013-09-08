@@ -1,10 +1,17 @@
 var map;
 var markerList = [];
+var names = [];
+var lat = [];
+var lon = [];
+var numShit = [];
+var numMiss = [];
+
+var shownInfoBubbles = [];
 
 function initialize() {
 
 	var mapOptions = {
-		zoom: 15,
+		zoom: 17,
 		mapTypeId: google.maps.MapTypeId.ROADMAP,
 	};
 	map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
@@ -62,12 +69,17 @@ function initialize() {
 			google.maps.event.addListener(map, 'click', function () {
 				$("#btn-shit").attr("disabled", "disabled");
 				$("#btn-miss").attr("disabled", "disabled");
+				
+				while(shownInfoBubbles.length > 0)
+				{
+					shownInfoBubbles.pop().close();
+				}
 				// info.close();
 			});
 	
 			google.maps.event.addListener(map, 'drag', function () {
-				$("#btn-shit").attr("disabled", "disabled");
-				$("#btn-miss").attr("disabled", "disabled");
+				// $("#btn-shit").attr("disabled", "disabled");
+				// $("#btn-miss").attr("disabled", "disabled");
 				// info.close();
 				clearTimeout(mapsTimeoutId);
 			});
@@ -82,44 +94,54 @@ function initialize() {
 	}
 	
 	
-				google.maps.event.addListener(map, 'click', function () {
+			google.maps.event.addListener(map, 'click', function () {
 				$("#btn-shit").attr("disabled", "disabled");
 				$("#btn-miss").attr("disabled", "disabled");
 				// info.close();
-				
 			});
+			
 				//Create random points in these bounds
-			var southWest = new google.maps.LatLng(39.951431 , -75.192313);
-			var northEast = new google.maps.LatLng(39.952599 , -75.190027);
+			// var southWest = new google.maps.LatLng(39.951431 , -75.192313);
+			// var northEast = new google.maps.LatLng(39.952599 , -75.190027);
 
-			var bounds = new google.maps.LatLngBounds(southWest, northEast);
-			map.fitBounds(bounds);
+			// var bounds = new google.maps.LatLngBounds(southWest, northEast);
+			// map.fitBounds(bounds);
 			
 			
-			// markerList[0] = new google.maps.Marker({
-				// position: (39.953841 , -75.198761)
+			// // markerList[0] = new google.maps.Marker({
+				// // position: (39.953841 , -75.198761)
 			
-			var lngSpan = northEast.lng() - southWest.lng();
-			var latSpan = northEast.lat() - southWest.lat();
+			//Should be optimized to only load in the immediate area.
+			for (var i = 0; i < bathrooms.length; i++)
+			{
+				//populate the arrays of db data.
+				names.push(bathrooms[i].Bathroom.name);
+				lat.push(bathrooms[i].Bathroom.lat);
+				lon.push(bathrooms[i].Bathroom.long);
+				numShit.push(bathrooms[i].Bathroom.num_shits);
+				numMiss.push(bathrooms[i].Bathroom.num_misses);
+				// console.log(bathrooms[0].Bathroom.lat);
+			}
+			
+			
+			// var lngSpan = northEast.lng() - southWest.lng();
+			// var latSpan = northEast.lat() - southWest.lat();
 
-			for (var i = 0; i < 5; i++) {
+			for (var i = 0; i < bathrooms.length; i++) {
 				var ranpos = new google.maps.LatLng(
-					southWest.lat() + latSpan * Math.random(),
-					southWest.lng() + lngSpan * Math.random());
+					lat[i],
+					lon[i]);
 				var marker = new google.maps.Marker({
-				position: ranpos,
-				map: map
+					position: ranpos,
+					map: map
 				});
 				
 				markerList.push(marker);
 				marker.setTitle((i + 1).toString());
-				attachPopup(marker, i);
+				attachPopup(names[i], numShit[i], numMiss[i], marker, i);
 			}
 
 
-			//for (var i = 0; i < bathrooms.length; i++)
-			//{
-				console.log(bathrooms[0].Bathroom.lat);
 }
 
 function handleNoGeolocation(errorFlag) {
@@ -160,25 +182,31 @@ function addNewBathroom(location) {
 	$("#addBathroomModal").modal('show');
 }
 
-function attachPopup(marker, num) {
-	var names = ['Starbucks', 'McDonalds', 'That Place Down the Hall', 'The Bush', 'Some Guys Yard'];
-	var numberShit = [34, 1, 7, 2, 9000];
-	var numberMiss = [20, 0, 9, 1, 4000];
+function attachPopup(name, shits, miss, marker, num) {
+	// var names = ['Starbucks', 'McDonalds', 'That Place Down the Hall', 'The Bush', 'Some Guys Yard'];
+	// var numberShit = [34, 1, 7, 2, 9000];
+	// var numberMiss = [20, 0, 9, 1, 4000];
 	
 	
 	var info2 = new google.maps.InfoWindow({
 		content:
-			"Name: <b>" + names[num] + "</b><br>" + 
-			"Number Shit: <font color=\"#468847\"><b>" + numberShit[num] + "</b></font><br>" +
-			"Number Miss: <font color=\"b94a48\"><b>" + numberMiss[num] + "</b></font><br>" +
-			"Difference: <b>" + (numberShit[num] - numberMiss[num]) + "</b><br>"
+			"Name: <b>" + name + "</b><br>" + 
+			"Number Shit: <font color=\"#468847\"><b>" + shits + "</b></font><br>" +
+			"Number Miss: <font color=\"b94a48\"><b>" + miss + "</b></font><br>" +
+			"Difference: <b>" + (shits - miss) + "</b><br>"
 	});
 
 	google.maps.event.addListener(marker, 'click', function() {
+		while(shownInfoBubbles.length > 0)
+		{
+			shownInfoBubbles.pop().close();
+		}
+		
 		info2.open(marker.get('map'), marker);
 		$("#btn-shit").removeAttr("disabled");
 		$("#btn-miss").removeAttr("disabled");
 		
+		shownInfoBubbles.push(info2);
 	});
 	
 
