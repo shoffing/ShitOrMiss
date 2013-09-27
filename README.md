@@ -6,8 +6,8 @@ Shit or Miss allows to you to add bathrooms to our massive database, find the be
 Links
 ----------------
 
-[Website](shitormiss.com)
+[Website](http://shitormiss.com)
 
-[Intro Video](http://book.cakephp.org)
+[Intro Video](https://www.youtube.com/watch?v=yNLhzlCLnmI)
 
 [PennApps Submission](http://pennapps.challengepost.com/submissions/17173-shit-or-miss)
